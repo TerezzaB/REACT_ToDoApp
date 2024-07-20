@@ -1,0 +1,9 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+
+.main_nav { position: sticky; top: 0; border: 1px solid #FFF; display: flex; justify-content:space-evenly; }
