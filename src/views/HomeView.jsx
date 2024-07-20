@@ -1,9 +1,12 @@
 import React from "react";
+import HomeTyping from "../components/HomeComponents/HomeTyping";
+import HomeButton from "../components/HomeComponents/HomeButton";
 
 export default function HomeView() {
     return (
         <>
-            <h2>Home View Goes Here</h2>
+            <HomeTyping />
+            <HomeButton />
         </>
     )
 }
