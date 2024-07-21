@@ -5,9 +5,15 @@ import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 
 export default function ToDoForm({ onAddTodo }) {
   const [title, setTitle] = useState('');
+  const [error, setError] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!title.trim()) {
+      setError('Title is required.');
+      return;
+    }
+    setError('');
     onAddTodo({
       id: Date.now(),
       title,
