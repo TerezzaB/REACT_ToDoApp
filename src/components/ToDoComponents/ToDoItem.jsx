@@ -30,21 +30,27 @@ export default function ToDoItem({ todo, onToggleComplete, onDelete, onEdit, onT
   };
 
   return (
-    <div className={`my-10 px-10 py-5 border ${todo.highPriority ? 'border-orange-500' : 'border-white'} rounded-2xl`}>
-      <div className={`flex justify-between ${todo.completed ? 'line-through' : ''}`}>
-        <input type="checkbox" checked={todo.completed} onChange={() => { onToggleComplete(todo.id); if (isEditing) setIsEditing(false); }} className="mr-4" />
-        <button onClick={handlePriorityToggle} disabled={todo.completed} className="ml-2">🔥</button>
-        {isEditing ? 
-        ( <input type="text" value={newTitle} onChange={(e) => setNewTitle(e.target.value)} className="mr-4" disabled={todo.completed} />) : 
-        ( <div className="mr-4 font-bold">{todo.title}</div> )}
-        <div className="mr-4">{formatDate(todo.createdAt)}</div>
-        <div>
-          <button
+    <div className={`my-5 sm:my-10 px-5 sm:px-10 py-3 sm:py-5 border text-xs sm:text-base xs:text-sm ${todo.highPriority ? 'border-orange-500' : 'border-white'} rounded-2xl`}>
+      <div className="flex justify-between items-center">
+        <div className="flex items-center">
+          <input type="checkbox" checked={todo.completed} onChange={() => { onToggleComplete(todo.id); if (isEditing) setIsEditing(false); }} className="mr-3 sm:mr-6" />
+          <button onClick={handlePriorityToggle} disabled={todo.completed} className={`${todo.completed ? 'opacity-50 cursor-not-allowed line-through' : ''}`}>🔥</button>
+        </div>
+        <div className="flex-1 mx-2 sm:mx-4">
+          {isEditing ? 
+            (<input type="text" value={newTitle} onChange={(e) => setNewTitle(e.target.value)} className="mr-4 w-full" disabled={todo.completed} />) : 
+            (<div className={`font-bold ${todo.completed ? 'line-through' : ''}`}>{todo.title}</div>)}
+        </div>
+        <div className="flex flex-col sm:flex-row items-center space-x-4 gap-y-3">
+          <div className="hidden md:block">{formatDate(todo.createdAt)}</div>
+          <button 
             onClick={handleEdit} disabled={todo.completed}
-            className={`mr-2 px-3 py-1 border-2 border-cyan-500 hover:border-cyan-400 bg-cyan-500 hover:bg-cyan-400 rounded-lg font-medium ${todo.completed ? 'opacity-50 cursor-not-allowed' : ''}`}>
-            <FontAwesomeIcon icon={faEdit} className="mr-2" /> {isEditing ? 'Save' : 'Edit'}
+            className={`px-3 py-1 border-2 border-cyan-500 hover:border-cyan-400 bg-cyan-500 hover:bg-cyan-400 rounded-lg font-medium ${todo.completed ? 'opacity-50 cursor-not-allowed' : ''}`}>
+            <FontAwesomeIcon icon={faEdit} className="mr-2 whitespace-nowrap" />{isEditing ? 'Save' : 'Edit'}
           </button>
-          <button onClick={() => onDelete(todo.id)} className="px-2 py-1 border-2 border-pink-800 rounded-lg"><FontAwesomeIcon icon={faTrash} className="mr-2" />Delete</button>
+          <button onClick={() => onDelete(todo.id)} className="px-2 py-1 border-2 border-pink-800 rounded-lg whitespace-nowrap">
+            <FontAwesomeIcon icon={faTrash} className="mr-2" />Delete
+          </button>
         </div>
       </div>
     </div>
