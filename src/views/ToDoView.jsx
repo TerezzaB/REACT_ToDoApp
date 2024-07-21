@@ -37,10 +37,18 @@ export default function TodoView() {
       });
   };
 
+  const editTodo = (id, newTitle) => {
+    const todo = todos.find(todo => todo.id === id);
+    axios.put(`${API_URL}/${id}`, { ...todo, title: newTitle })
+      .then(response => {
+        setTodos(todos.map(todo => todo.id === id ? response.data : todo));
+      });
+  };
+
   return (
     <div>
       <ToDoForm onAddTodo={addTodo} />
-      <ToDoList todos={todos} onToggleComplete={toggleComplete} onDelete={deleteTodo} />
+      <ToDoList todos={todos} onToggleComplete={toggleComplete} onDelete={deleteTodo} onEdit={editTodo} />
     </div>
   );
 }

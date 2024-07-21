@@ -14,7 +14,6 @@ export default function App() {
             <div className="p-2"><Link to="/" activestyle={{ color: '#a87cff' }}>Home</Link></div>
             <div className="p-2"><Link to="/todo" activestyle={{ color: '#a87cff' }}>ToDo App</Link></div> 
         </div>
-
         <Routes>
           <Route path="/" element={<HomeView />} />
           <Route path="/todo" element={<ToDoView />} />
