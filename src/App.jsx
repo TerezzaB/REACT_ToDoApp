@@ -11,7 +11,7 @@ export default function App() {
     <Router>
       <div>
         <div className="sticky top-0 flex flex-row justify-center p-2 _nav">
-            <div className="p-2"><Link to="/" activestyle={{ color: '#a87cff' }}>Home</Link></div>
+            <div className="p-2 mr-3"><Link to="/" activestyle={{ color: '#a87cff' }}>Home</Link></div>
             <div className="p-2"><Link to="/todo" activestyle={{ color: '#a87cff' }}>ToDo App</Link></div> 
         </div>
         <Routes>
