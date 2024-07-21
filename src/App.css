@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -6,32 +10,21 @@
 
 ._nav { border-bottom: 1px solid #40ffff; z-index: 1000; background-color: #14142a; }
 
-@media (min-width: 992px) {
-  .typing-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20%;
-  }
-  
+@layer components {
   .typing-effect {
-    overflow: hidden;
-    border-right: .15em solid #FFF;
-    white-space: nowrap;
-    letter-spacing: .15em;
-    animation:
-      typing 3.5s steps(30, end),
-      blink-caret .75s step-end infinite;
+    @apply inline-block;
+    animation: typing 3.5s steps(30, end), blink-caret .75s step-end infinite;
   }
-  
+
   @keyframes typing {
     from { width: 0 }
     to { width: 100% }
   }
-  
+
   @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: #FFF; }
   }
 }
+
 

@@ -4,7 +4,7 @@ import HomeButton from "../components/HomeComponents/HomeButton";
 
 export default function HomeView() {
     return (
-        <div className="flex flex-col gap-y-5 items-center justify-center min-h-screen">
+        <div className="flex flex-col gap-y-5 items-center justify-center min-h-screen transform -translate-y-10">
             <HomeTyping />
             <HomeButton />
         </div>
