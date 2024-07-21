@@ -24,7 +24,7 @@ export default function TodoView() {
 
   const toggleComplete = (id) => {
     const todo = todos.find(todo => todo.id === id);
-    axios.put(`${API_URL}/${id}`, { ...todo, completed: !todo.completed })
+    axios.put(`${API_URL}/${id}`, { ...todo, completed: !todo.completed, highPriority: todo.completed ? todo.highPriority : false })
       .then(response => {
         setTodos(todos.map(todo => todo.id === id ? response.data : todo));
       });
@@ -45,10 +45,18 @@ export default function TodoView() {
       });
   };
 
+  const togglePriority = (id, highPriority) => {
+    const todo = todos.find(todo => todo.id === id);
+    axios.put(`${API_URL}/${id}`, { ...todo, highPriority })
+      .then(response => {
+        setTodos(todos.map(todo => todo.id === id ? response.data : todo));
+      });
+  };
+
   return (
     <div>
       <ToDoForm onAddTodo={addTodo} />
-      <ToDoList todos={todos} onToggleComplete={toggleComplete} onDelete={deleteTodo} onEdit={editTodo} />
+      <ToDoList todos={todos} onToggleComplete={toggleComplete} onDelete={deleteTodo} onEdit={editTodo} onTogglePriority={togglePriority} />
     </div>
   );
 }

@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 
-export default function ToDoItem({ todo, onToggleComplete, onDelete, onEdit }) {
+export default function ToDoItem({ todo, onToggleComplete, onDelete, onEdit, onTogglePriority }) {
   const [isEditing, setIsEditing] = useState(false);
   const [newTitle, setNewTitle] = useState(todo.title);
-  const [highPriority, setHighPriority] = useState(false);
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -25,16 +24,16 @@ export default function ToDoItem({ todo, onToggleComplete, onDelete, onEdit }) {
   };
 
   const handlePriorityToggle = () => {
-    setHighPriority(!highPriority);
+    if (!todo.completed) {
+      onTogglePriority(todo.id, !todo.highPriority);
+    }
   };
 
-  console.log(todo);
-
   return (
-    <div className={`my-10 px-10 py-5 border ${highPriority ? 'border-orange-500' : 'border-white'} rounded-2xl`}>
+    <div className={`my-10 px-10 py-5 border ${todo.highPriority ? 'border-orange-500' : 'border-white'} rounded-2xl`}>
       <div className={`flex justify-between ${todo.completed ? 'line-through' : ''}`}>
-        <input type="checkbox" checked={todo.completed} onChange={() => { onToggleComplete(todo.id); if (isEditing) setIsEditing(false);}} className="mr-4" />
-        <button onClick={handlePriorityToggle} className="ml-2">🔥</button>
+        <input type="checkbox" checked={todo.completed} onChange={() => { onToggleComplete(todo.id); if (isEditing) setIsEditing(false); }} className="mr-4" />
+        <button onClick={handlePriorityToggle} disabled={todo.completed} className="ml-2">🔥</button>
         {isEditing ? 
         ( <input type="text" value={newTitle} onChange={(e) => setNewTitle(e.target.value)} className="mr-4" disabled={todo.completed} />) : 
         ( <div className="mr-4 font-bold">{todo.title}</div> )}
