@@ -15,7 +15,7 @@ export default function ToDoItem ({ todo, onToggleComplete, onDelete }) {
 
   return (
     <div className="px-10 py-5">
-      <div className="p-3 border-2 border-white">
+      <div className="p-4 border border-white rounded-2xl">
         <input type="checkbox" checked={todo.completed} onChange={() => onToggleComplete(todo.id)} className='mr-4' />
         <span className="mr-4">{formatDate(todo.createdAt)}</span>
         <span className="mr-4">{todo.title}</span>
