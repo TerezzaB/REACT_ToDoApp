@@ -4,14 +4,14 @@
   text-align: center;
 }
 
-._nav { border-bottom: 1px solid #06b6d4; z-index: 1000; background-color: #14142a; }
+._nav { border-bottom: 1px solid #40ffff; z-index: 1000; background-color: #14142a; }
 
 @media (min-width: 992px) {
   .typing-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10%;
+    margin-top: 20%;
   }
   
   .typing-effect {
