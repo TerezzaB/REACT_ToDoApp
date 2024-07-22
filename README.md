@@ -12,7 +12,7 @@ A simple ToDo application built with React.
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/) (LTS version is recommended)
-- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/) (package managers)
+- [npm](https://www.npmjs.com/) (package managers)
 
 ## Installation
 
@@ -30,12 +30,12 @@ A simple ToDo application built with React.
    ```bash
    cd REACT_ToDoApp
 
-3. ***Install the dependencies ***
+3. **Install the dependencies**
 
    ```bash
    npm install
 
-4. ***Run the application***
+4. **Run the application**
 
    ```bash
    npm start
