@@ -38,4 +38,4 @@ A simple ToDo application built with React.
 4. **Run the application**
 
    ```bash
-   npm start
+   npm run dev
