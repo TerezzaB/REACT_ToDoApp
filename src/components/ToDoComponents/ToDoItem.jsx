@@ -30,7 +30,7 @@ export default function ToDoItem({ todo, onToggleComplete, onDelete, onEdit, onT
   };
 
   return (
-    <div className={`my-5 sm:my-10 px-5 sm:px-10 py-3 sm:py-5 border text-xs sm:text-base xs:text-sm ${todo.highPriority ? 'border-orange-500' : 'border-white'} rounded-2xl`}>
+    <div className={`my-5 sm:my-10 px-5 sm:px-10 py-3 sm:py-5 border text-xs sm:text-base xs:text-sm ${todo.highPriority ? 'border-2 border-orange-600' : 'border-white'} rounded-2xl`}>
       <div className="flex justify-between items-center">
         <div className="flex items-center">
           <input type="checkbox" checked={todo.completed} onChange={() => { onToggleComplete(todo.id); if (isEditing) setIsEditing(false); }} className="mr-3 sm:mr-6" />

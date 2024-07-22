@@ -13,7 +13,7 @@ export default function TodoList({ todos, onToggleComplete, onDelete, onEdit, on
   });
 
   return (
-    <div className="mx-10">
+    <div className="mx-5 sm:mx-10">
       {todos.map(todo => (
         <ToDoItem
           key={todo.id}

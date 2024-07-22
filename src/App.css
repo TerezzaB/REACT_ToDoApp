@@ -9,6 +9,7 @@
 }
 
 ._nav { border-bottom: 1px solid #40ffff; z-index: 1000; background-color: #14142a; }
+._modal { background-color: #14142a; }
 
 @layer components {
   .typing-effect {

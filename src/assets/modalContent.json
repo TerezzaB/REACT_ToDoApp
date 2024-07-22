@@ -1,0 +1,4 @@
+{
+    "infoText": "Hello! Welcome to my ToDo application! 🚀\n\nHere is a quick guide on how to use this app:\n\nTo create a new item, please fill in the name and click 'Add Item'.\nNote that the item name is <u><b>required</b></u>!\n\nIf you complete an item, you can mark it as 'Completed'.\nTo mark an item as high priority, click the button with this symbol: 🔥.\n\nTo edit an item, click <b>'Edit'</b> and change the name as needed.\nTo delete an item, click <b>'Delete'</b>. \n\nAll completed items are automatically moved to the bottom, ⬇️\nwhile high priority items are automatically moved to the top. ⬆️\n\nYou can delete any item, and all items except those marked as <b>'Completed'</b> can be edited.\n\nOn larger screens, the creation date is also displayed."
+}
+  

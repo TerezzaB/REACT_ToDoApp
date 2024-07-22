@@ -28,7 +28,7 @@ export default function ToDoForm({ onAddTodo }) {
       <form onSubmit={handleSubmit}>
         <div className="flex flex-row justify-center items-center">
           <div><input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Add a new todo item" className="my-10 mr-5 sm:mr-10 p-3 sm:p-4 text-center border rounded-2xl border-fuchsia-600 text-white" /></div>
-          <div><button type="submit" className="p-3 px-4 sm:p-4 sm:px-5 bg-fuchsia-600 hover:bg-fuchsia-500 rounded-2xl font-bold"><FontAwesomeIcon icon={faPlusCircle} className="mr-2" />Add Todo</button></div>
+          <div><button type="submit" className="p-3 px-4 sm:p-4 sm:px-5 bg-fuchsia-600 hover:bg-fuchsia-500 rounded-2xl font-bold"><FontAwesomeIcon icon={faPlusCircle} className="mr-2" />Add Item</button></div>
         </div>
         {error && <div className="font-bold text-pink-800 mt-2">{error}</div>}
       </form>
