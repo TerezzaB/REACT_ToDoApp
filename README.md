@@ -23,8 +23,6 @@ A simple ToDo application built with React.
    ```bash
    git clone https://github.com/TerezzaB/REACT_ToDoApp.git
 
-
-
 2. **Navigate to the project directory**
 
    Change to the project directory with:
@@ -32,14 +30,10 @@ A simple ToDo application built with React.
    ```bash
    cd REACT_ToDoApp
 
-
-
 3. ***Install the dependencies ***
 
    ```bash
    npm install
-
-
 
 4. ***Run the application***
 
